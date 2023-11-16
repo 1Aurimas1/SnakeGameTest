@@ -87,7 +87,7 @@ builder.Services.Configure<MvcOptions>(options =>
 });
 
 builder.Services.AddSignalR();
-builder.Services.AddSingleton<GameManager>();
+builder.Services.AddSingleton<IGameManager, GameManager>();
 
 var app = builder.Build();
 

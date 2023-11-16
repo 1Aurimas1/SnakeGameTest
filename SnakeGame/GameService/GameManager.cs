@@ -1,6 +1,12 @@
 using Microsoft.AspNetCore.SignalR;
 
-public class GameManager
+public interface IGameManager
+{
+    string JoinGameRoom(string connectionId, string playerName, GameMode gameMode);
+    void UpdatePlayerMovePosition(string gameRoomId, string playerName, Direction direction);
+}
+
+public class GameManager : IGameManager
 {
     private readonly IHubContext<GameHub, IGameClient> _hubContext;
     private static List<GameRoom> _rooms = new List<GameRoom>();

@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.SignalR;
 [Authorize]
 public class GameHub : Hub<IGameClient>
 {
-    private readonly GameManager _gameManager;
+    private readonly IGameManager _gameManager;
 
-    public GameHub(GameManager gameManager)
+    public GameHub(IGameManager gameManager)
     {
         _gameManager = gameManager;
     }
