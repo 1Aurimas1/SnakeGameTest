@@ -1,4 +1,4 @@
-global using snake_game.Data;
+global using SnakeGame.Data;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;

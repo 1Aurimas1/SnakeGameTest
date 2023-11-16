@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using snake_game.Data;
+using SnakeGame.Data;
 
 #nullable disable
 
-namespace snake_game.Migrations
+namespace SnakeGame.Migrations
 {
     [DbContext(typeof(DataContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
@@ -21,7 +21,7 @@ namespace snake_game.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("snake_game.Models.Profile", b =>
+            modelBuilder.Entity("SnakeGame.Models.Profile", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -51,7 +51,7 @@ namespace snake_game.Migrations
                     b.HasAnnotation("Relational:JsonPropertyName", "profile");
                 });
 
-            modelBuilder.Entity("snake_game.Models.User", b =>
+            modelBuilder.Entity("SnakeGame.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -86,18 +86,18 @@ namespace snake_game.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("snake_game.Models.Profile", b =>
+            modelBuilder.Entity("SnakeGame.Models.Profile", b =>
                 {
-                    b.HasOne("snake_game.Models.User", "User")
+                    b.HasOne("SnakeGame.Models.User", "User")
                         .WithOne("Profile")
-                        .HasForeignKey("snake_game.Models.Profile", "UserId")
+                        .HasForeignKey("SnakeGame.Models.Profile", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("snake_game.Models.User", b =>
+            modelBuilder.Entity("SnakeGame.Models.User", b =>
                 {
                     b.Navigation("Profile")
                         .IsRequired();

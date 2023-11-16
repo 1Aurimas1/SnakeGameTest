@@ -1,9 +1,9 @@
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using snake_game.Models;
+using SnakeGame.Models;
 
-namespace snake_game.Controllers;
+namespace SnakeGame.Controllers;
 
 [Authorize]
 [Route("/api/[controller]")]

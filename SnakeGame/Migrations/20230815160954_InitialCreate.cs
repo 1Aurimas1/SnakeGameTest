@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace snake_game.Migrations
+namespace SnakeGame.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

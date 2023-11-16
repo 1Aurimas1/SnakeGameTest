@@ -1,7 +1,7 @@
 ﻿global using Microsoft.EntityFrameworkCore;
-using snake_game.Models;
+using SnakeGame.Models;
 
-namespace snake_game.Data;
+namespace SnakeGame.Data;
 
 public class DataContext : DbContext
 {

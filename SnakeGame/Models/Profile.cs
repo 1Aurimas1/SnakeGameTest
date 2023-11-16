@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace snake_game.Models;
+namespace SnakeGame.Models;
 
 public class Profile
 {

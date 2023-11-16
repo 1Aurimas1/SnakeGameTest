@@ -4,9 +4,9 @@ using System.Text;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using snake_game.Models;
+using SnakeGame.Models;
 
-namespace snake_game.Controllers;
+namespace SnakeGame.Controllers;
 
 [Route("/api/[controller]")]
 [ApiController]

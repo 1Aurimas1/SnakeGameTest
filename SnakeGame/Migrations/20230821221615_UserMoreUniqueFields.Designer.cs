@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using snake_game.Data;
+using SnakeGame.Data;
 
 #nullable disable
 
-namespace snake_game.Migrations
+namespace SnakeGame.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230821221324_UserNewField")]
-    partial class UserNewField
+    [Migration("20230821221615_UserMoreUniqueFields")]
+    partial class UserMoreUniqueFields
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace snake_game.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("snake_game.Models.User", b =>
+            modelBuilder.Entity("SnakeGame.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,6 +45,12 @@ namespace snake_game.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.HasIndex("Username")
+                        .IsUnique();
 
                     b.ToTable("Users");
                 });

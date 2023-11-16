@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace snake_game.Migrations
+namespace SnakeGame.Migrations
 {
     /// <inheritdoc />
     public partial class UserMoreUniqueFields : Migration

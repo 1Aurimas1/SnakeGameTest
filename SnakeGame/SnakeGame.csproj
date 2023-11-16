@@ -10,7 +10,7 @@
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
     <SpaProxyServerUrl>https://localhost:3000</SpaProxyServerUrl>
     <SpaProxyLaunchCommand>pnpm run dev</SpaProxyLaunchCommand>
-    <RootNamespace>snake_game</RootNamespace>
+    <RootNamespace>SnakeGame</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 

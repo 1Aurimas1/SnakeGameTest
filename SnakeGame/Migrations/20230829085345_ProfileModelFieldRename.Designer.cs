@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using snake_game.Data;
+using SnakeGame.Data;
 
 #nullable disable
 
-namespace snake_game.Migrations
+namespace SnakeGame.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230829201923_ProfileModelFieldRename2")]
-    partial class ProfileModelFieldRename2
+    [Migration("20230829085345_ProfileModelFieldRename")]
+    partial class ProfileModelFieldRename
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace snake_game.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("snake_game.Models.Profile", b =>
+            modelBuilder.Entity("SnakeGame.Models.Profile", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,7 +32,7 @@ namespace snake_game.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Highscore")
+                    b.Property<int>("HighScore")
                         .HasColumnType("integer");
 
                     b.Property<int>("Losses")
@@ -54,7 +54,7 @@ namespace snake_game.Migrations
                     b.HasAnnotation("Relational:JsonPropertyName", "profile");
                 });
 
-            modelBuilder.Entity("snake_game.Models.User", b =>
+            modelBuilder.Entity("SnakeGame.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -89,18 +89,18 @@ namespace snake_game.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("snake_game.Models.Profile", b =>
+            modelBuilder.Entity("SnakeGame.Models.Profile", b =>
                 {
-                    b.HasOne("snake_game.Models.User", "User")
+                    b.HasOne("SnakeGame.Models.User", "User")
                         .WithOne("Profile")
-                        .HasForeignKey("snake_game.Models.Profile", "UserId")
+                        .HasForeignKey("SnakeGame.Models.Profile", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("snake_game.Models.User", b =>
+            modelBuilder.Entity("SnakeGame.Models.User", b =>
                 {
                     b.Navigation("Profile")
                         .IsRequired();

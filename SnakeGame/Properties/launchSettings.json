@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "snake_game": {
+    "SnakeGame": {
       "commandName": "Project",
       "launchBrowser": true,
       "applicationUrl": "https://localhost:8000;http://localhost:8001",

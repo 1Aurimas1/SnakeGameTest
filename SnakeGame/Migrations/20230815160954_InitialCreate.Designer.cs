@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using snake_game.Data;
+using SnakeGame.Data;
 
 #nullable disable
 
-namespace snake_game.Migrations
+namespace SnakeGame.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230821221615_UserMoreUniqueFields")]
-    partial class UserMoreUniqueFields
+    [Migration("20230815160954_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,17 +24,13 @@ namespace snake_game.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("snake_game.Models.User", b =>
+            modelBuilder.Entity("SnakeGame.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
@@ -45,12 +41,6 @@ namespace snake_game.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Email")
-                        .IsUnique();
-
-                    b.HasIndex("Username")
-                        .IsUnique();
 
                     b.ToTable("Users");
                 });

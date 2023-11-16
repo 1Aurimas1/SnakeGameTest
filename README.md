@@ -11,7 +11,7 @@ Multiplayer snake game that utilizes SignalR for real-time communication and JWT
 
 ## Setup
 
-- If you are using a package manager other than `pnpm`, update the `pnpm` commands in the `snake-game.csproj` file to match your chosen node package manager's commands.
+- If you are using a package manager other than `pnpm`, update the `pnpm` commands in the `SnakeGame.csproj` file to match your chosen node package manager's commands.
 - Install dotnet-ef: `$ dotnet tool install --global dotnet-ef`
 - Update database to the last migration: `$ dotnet ef database update`
 
