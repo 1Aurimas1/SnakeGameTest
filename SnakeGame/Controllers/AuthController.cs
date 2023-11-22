@@ -13,16 +13,16 @@ namespace SnakeGame.Controllers;
 public class AuthController : ControllerBase
 {
     private readonly IConfiguration _configuration;
-    private readonly DataContext _context;
+    private readonly IDataContext _context;
 
-    public AuthController(IConfiguration configuration, DataContext context)
+    public AuthController(IConfiguration configuration, IDataContext context)
     {
         _configuration = configuration;
         _context = context;
     }
 
     [HttpPost("register")]
-    public async Task<ActionResult<string>> Register(UserRegisterDto userDto)
+    public async Task<ActionResult> Register(UserRegisterDto userDto)
     {
         if (!IsValidEmail(userDto.Email))
             ModelState.AddModelError(nameof(userDto.Email), "The email is not valid.");

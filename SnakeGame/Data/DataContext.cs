@@ -3,32 +3,45 @@ using SnakeGame.Models;
 
 namespace SnakeGame.Data;
 
-public class DataContext : DbContext
+public interface IDataContext
 {
-    public DataContext(DbContextOptions<DataContext> options)
-        : base(options)
-    {
+	DbSet<User> Users { get; set; }
+	DbSet<Profile> Profiles { get; set; }
 
-    }
+	Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+}
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        //base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<User>()
-            .HasIndex(u => u.Username)
-            .IsUnique();
+public class DataContext : DbContext, IDataContext
+{
+	public DataContext(DbContextOptions<DataContext> options)
+		: base(options)
+	{
 
-        modelBuilder.Entity<User>()
-            .HasIndex(u => u.Email)
-            .IsUnique();
+	}
 
-        modelBuilder.Entity<User>()
-            .HasOne(u => u.Profile)
-            .WithOne(p => p.User)
-            .HasForeignKey<Profile>(p => p.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
-    }
+	protected override void OnModelCreating(ModelBuilder modelBuilder)
+	{
+		//base.OnModelCreating(modelBuilder);
+		modelBuilder.Entity<User>()
+			.HasIndex(u => u.Username)
+			.IsUnique();
 
-    public DbSet<User> Users { get; set; }
-    public DbSet<Profile> Profiles { get; set; }
+		modelBuilder.Entity<User>()
+			.HasIndex(u => u.Email)
+			.IsUnique();
+
+		modelBuilder.Entity<User>()
+			.HasOne(u => u.Profile)
+			.WithOne(p => p.User)
+			.HasForeignKey<Profile>(p => p.UserId)
+			.OnDelete(DeleteBehavior.Cascade);
+	}
+
+	public DbSet<User> Users { get; set; }
+	public DbSet<Profile> Profiles { get; set; }
+
+	public new async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+	{
+		return await base.SaveChangesAsync(cancellationToken);
+	}
 }
