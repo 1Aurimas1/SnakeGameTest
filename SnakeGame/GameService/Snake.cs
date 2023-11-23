@@ -1,3 +1,5 @@
+namespace SnakeGame.GameService;
+
 class Snake
 {
     private readonly byte _initSize;
@@ -63,5 +65,3 @@ class Snake
         return _parts.Contains(p);
     }
 }
-
-

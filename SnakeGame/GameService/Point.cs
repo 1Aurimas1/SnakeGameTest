@@ -1,3 +1,5 @@
+namespace SnakeGame.GameService;
+
 public class Point
 {
     public int X { get; private set; }
@@ -65,5 +67,3 @@ public class Point
         return HashCode.Combine(X, Y);
     }
 }
-
-

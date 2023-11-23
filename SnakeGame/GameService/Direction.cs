@@ -1,3 +1,5 @@
+namespace SnakeGame.GameService;
+
 public enum Direction
 {
     Up = 0,
@@ -5,5 +7,3 @@ public enum Direction
     Left,
     Right,
 }
-
-

@@ -1,3 +1,5 @@
+namespace SnakeGame.GameService;
+
 public class GameDto
 {
     public string PlayerName { get; set; }
@@ -5,5 +7,3 @@ public class GameDto
     public Point? Food { get; set; }
     public int? Score { get; set; }
 }
-
-

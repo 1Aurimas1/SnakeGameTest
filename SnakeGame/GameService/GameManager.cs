@@ -1,4 +1,7 @@
 using Microsoft.AspNetCore.SignalR;
+using SnakeGame.Hubs;
+
+namespace SnakeGame.GameService;
 
 public interface IGameManager
 {
@@ -99,5 +102,3 @@ public class GameManager : IGameManager
         _rooms.Find(r => r.Id == gameRoomId)?.UpdatePlayerMovePosition(playerName, direction);
     }
 }
-
-

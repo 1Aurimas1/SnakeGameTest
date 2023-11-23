@@ -1,11 +1,13 @@
 global using SnakeGame.Data;
-using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
+using SnakeGame.GameService;
+using SnakeGame.Hubs;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 var localOrigins = "_localOrigins";

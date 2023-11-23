@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
+using SnakeGame.GameService;
+
+namespace SnakeGame.Hubs;
 
 [Authorize]
 public class GameHub : Hub<IGameClient>
@@ -26,4 +29,3 @@ public class GameHub : Hub<IGameClient>
         _gameManager.UpdatePlayerMovePosition(gameRoomId, playerName, direction);
     }
 }
-

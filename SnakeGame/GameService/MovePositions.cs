@@ -1,3 +1,5 @@
+namespace SnakeGame.GameService;
+
 static class MovePositions
 {
     //public static readonly Point Up, Down, Left, Right;
@@ -21,5 +23,3 @@ static class MovePositions
         return _positions[direction];
     }
 }
-
-

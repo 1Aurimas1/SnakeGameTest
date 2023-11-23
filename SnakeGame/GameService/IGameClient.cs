@@ -1,3 +1,5 @@
+namespace SnakeGame.GameService;
+
 public interface IGameClient
 {
     Task ReceiveSnake(List<Point> parts);
@@ -5,5 +7,3 @@ public interface IGameClient
     Task ReceiveStateObjects(List<GameDto> gameStates, bool initial);
     Task ReceiveCountdown(int i);
 }
-
-

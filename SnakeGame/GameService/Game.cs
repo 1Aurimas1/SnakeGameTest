@@ -1,3 +1,5 @@
+namespace SnakeGame.GameService;
+
 enum GameStatus
 {
     Initialized,
@@ -111,5 +113,3 @@ class Game
         return emptyCells;
     }
 }
-
-

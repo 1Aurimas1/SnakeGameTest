@@ -1,3 +1,5 @@
+namespace SnakeGame.GameService;
+
 static class Grid
 {
     public static readonly byte Rows, Cols;
@@ -13,8 +15,6 @@ static class Grid
     {
         return (point.X < 0 || point.X >= Cols ||
                 point.Y < 0 || point.Y >= Rows) ?
-                false : true;
+            false : true;
     }
 }
-
-

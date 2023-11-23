@@ -1,7 +1,7 @@
-using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SnakeGame.Models;
+using System.Security.Claims;
 
 namespace SnakeGame.Controllers;
 
@@ -10,14 +10,9 @@ namespace SnakeGame.Controllers;
 [ApiController]
 public class ProfileController : ControllerBase
 {
-    private readonly IConfiguration _configuration;
     private readonly DataContext _context;
 
-    public ProfileController(IConfiguration configuration, DataContext context)
-    {
-        _configuration = configuration;
-        _context = context;
-    }
+    public ProfileController(DataContext context) => _context = context;
 
     [HttpGet]
     public async Task<ActionResult<Profile>> Get()
