@@ -33,7 +33,7 @@ public class ApplicationTests : IAsyncLifetime
     }
 
     [Fact]
-    public async Task MethodName_ShouldDoWhat_WhenWhat()
+    public async Task Server_ShouldReturnSuccessResponse_WhenRegistering()
     {
         // Arrange
         var request = new UserRegisterDto
