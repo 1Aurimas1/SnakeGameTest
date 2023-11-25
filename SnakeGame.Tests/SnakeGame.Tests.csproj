@@ -13,6 +13,7 @@
     <PackageReference Include="Meziantou.Extensions.Logging.Xunit" Version="1.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.14" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.14" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
     <PackageReference Include="Moq" Version="4.20.69" />
